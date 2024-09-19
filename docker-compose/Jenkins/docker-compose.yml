@@ -1,0 +1,35 @@
+version: '3.5'
+services:
+  jenkins:
+     image: 'jenkins/jenkins:lts'
+     container_name: jenkins
+#     deploy:
+#       replicas: 2
+     privileged: true
+     user: root
+     deploy:
+       replicas: 1
+       placement:
+        constraints:
+          - node.role == manager
+       labels:
+         - "traefik.enable=true"
+         - "traefik.http.routers.jenkins.rule=Host(`jenkins.pfeelyes.space`)"
+         - "traefik.http.services.jenkins.loadbalancer.server.port=8080"
+         - "traefik.http.routers.jenkins.entrypoints=websecure"
+         - "traefik.http.routers.jenkins.tls=true"
+         - "traefik.http.routers.jenkins.tls.certresolver=myresolver"
+     networks:
+       - proxy
+     #ports:
+      # - "8081:8080"
+#     #  - "443:8443"
+     environment:
+       - JAVA_OPTS:-Djava.awt.headless=true -Djava.util.logging.config.file=/var/jenkins_home/log.properties
+     volumes:
+       - /var/jenkins_home:/var/jenkins_home
+       - /var/run/docker.sock:/var/run/docker.sock
+       - /usr/bin/docker:/usr/bin/docker
+networks:
+  proxy:
+    external: true
