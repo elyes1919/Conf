@@ -49,8 +49,8 @@ resource "google_compute_instance" "jenkins" {
     scopes = ["https://www.googleapis.com/auth/devstorage.read_only", "https://www.googleapis.com/auth/logging.write", "https://www.googleapis.com/auth/monitoring.write", "https://www.googleapis.com/auth/service.management.readonly", "https://www.googleapis.com/auth/servicecontrol", "https://www.googleapis.com/auth/trace.append"]
   }
 
- metadata = {
-    ssh-keys = "ahmed:ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDVt5b43LGf7ft+NWIUC28mo3HEi5EYCozPQgSvCVlxAionW2eq3PDA6fvKwFM7r5TgWvGor4GrwxDSL3cj+fTFfoOFzVfF9lGd1p5WUDhLwiKvkSk7bJcgBf1pVd/vrJj/tKtYc+fJJ1wiXrIO5LovZKM6hCJYBrA7qbR3XrNYkOYvJYx8wsy5bMjIENir46lFKHg+JUpm6zCLm9bOn3JPYal70FeZyINHL4OhaTuRZ3QDf1KU2JOvrBffgu8ZOMOuiXnyWdR21ECD9o+d0xeYaB62htJb/jUDUbel9Il4aSu9+eWa68ECY1ASAzfxLnGKgFLVbVbMg1f51cGSRXXVnCptyq6+BpCtzJeP2GEBlBndTr5gMgck4YGibivvvspBa3DMpLA/tx+J33Fd79bEv0P0mH3AkX61zdEceZkkJsPph0dWjoSek7to6Xy0jQSaDe7PCnT86papUrrS141rzJLfbtuQPpFDGq726Mxnwnby31ENLGWTGYfUDC9nHV0= ahmed@MSI"
+   metadata = {
+    ssh-keys = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCxHBrxJeznzcUUWIlBKziU/mxG3mQJg+6vEujz2xcE/dAcsxUMmXkoBVtf0jX2tc7+XcN5D6YzjF52K3eV2YXyK5txazNgjYwduZq60DB8msQpKhkMZZKs4oFqQ1pZMmLu/Q6J8bfPsCJzT/b/vUfL5pKj4xwCQsdFA7AI1INGz/sJiDE1SMTesIyJAOs20rzfs0N9Iz6rDc+uN9HeEAlfPqq4wpVETYozSFsBpZzQjNSBpAu+LTEgBOafPp2LzpcvdQivvorW1X+aIp3t2asQacXYFW8aPppVyP/Bo7QzE24bOO7Faq9ewN2FbaKnDcR8KWrOwyKY/rwLM1abkCsKf06nd4Z1GZnjHcNjlixDB6EqGaVVIgmo44dHjnGSeup4ER2a5qwTtxXbZRJS73tuVRHBwbxJpHfTp55TtrGyDeqFB7GCLaqbdVBZaV5IIeytbppG06G4NtweQx2q/a4cSAvfZyLj5eNXpUoXeslnHZeAHePaPhL1h1gP7xZpL2k= azuread\elyesguettat@eguettat"
   }
 
   shielded_instance_config {
